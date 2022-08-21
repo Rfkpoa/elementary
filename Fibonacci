@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+void calculaFibonacci(){
+   int val1 = 0;
+   int val2 = 1;
+   int tot = 0;
+   int N = 0;
+   int c = 2;
+   cout<<"Please type a number: "<<endl;
+   cin>>N;
+   do{
+       tot = val1 + val2;
+       val1=val2;
+       val2=tot;
+       c+=1;
+       if (N == 0){
+           c = 1;
+           break;
+       }else if(N == 1){
+           c = 2;
+           cout<<"your number is on position: "<<c<<endl;
+           c = 3;
+           break;
+       }
+    }while(tot != N && c>0);
+
+    if(c<0){
+        cout<<"This is not a Fibonacci number"<<endl;
+    }else{
+        cout<<"your number is on position: "<<c<<endl;
+    }
+  
+}
+
+int main()
+{
+    calculaFibonacci();
+
+    return 0;
+}
