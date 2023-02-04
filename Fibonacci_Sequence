@@ -3,10 +3,10 @@ using namespace std;
 void fibonacci(int);
 
 int num = 0;
-int pos = 0; //Position
-int total = 0;//number to be printed.
-int num2 = 0;//number to be summed.
-int num3;//number to be summed.
+int pos = 0; //posição
+int total = 0;//número impresso.
+int num2 = 0; //número para trabalhar a soma
+int num3;
 int main()
 {
     //ask for the number from the user and keep asking in case the number is negative
@@ -19,7 +19,7 @@ int main()
     } while (num < 0);
     fibonacci(num);
     
-   //Fibonacci sequence: 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,....
+   //Fibonacci sequence: 0,1,1,2,3,5,8,13, 21, 34, 55, 89, 144, 233, 377, 610, 
 }
 void fibonacci(int num) {
     do {
@@ -33,6 +33,10 @@ void fibonacci(int num) {
             total = num2 + num3; // 1+1
             num2 = num3;
             num3 = total;
-        }      
+            if (total > num) {
+                cout <<"\n Your number is not in Fibonacci sequence."<<endl;
+                break;
+            }
+        }
     } while (total <= num);
 };
