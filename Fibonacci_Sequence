@@ -1,42 +1,38 @@
 #include <iostream>
-
 using namespace std;
+void fibonacci(int);
 
-void calculaFibonacci(){
-   int val1 = 0;
-   int val2 = 1;
-   int tot = 0;
-   int N = 0;
-   int c = 2;
-   cout<<"Please type a number: "<<endl;
-   cin>>N;
-   do{
-       tot = val1 + val2;
-       val1=val2;
-       val2=tot;
-       c+=1;
-       if (N == 0){
-           c = 1;
-           break;
-       }else if(N == 1){
-           c = 2;
-           cout<<"your number is on position: "<<c<<endl;
-           c = 3;
-           break;
-       }
-    }while(tot != N && c>0);
-
-    if(c<0){
-        cout<<"This is not a Fibonacci number"<<endl;
-    }else{
-        cout<<"your number is on position: "<<c<<endl;
-    }
-  
-}
-
+int num = 0;
+int pos = 0; //posição
+int total = 0;//número impresso.
+int num2 = 0; //número para trabalhar a soma
+int num3;
 int main()
 {
-    calculaFibonacci();
-
-    return 0;
+    //ask for the number from the user and keep asking in case the number is negative
+    do {
+        cout << "Please, write a number: ";
+        cin >> num;
+        if (num < 0) {
+            cout << "invalid number."<<endl;
+        }
+    } while (num < 0);
+    fibonacci(num);
+    
+   //Fibonacci sequence: 0,1,1,2,3,5,8,13, 21, 34, 55, 89, 144, 233, 377, 610, 
 }
+void fibonacci(int num) {
+    do {
+        cout << "position" << " " << pos << ":" << total << endl;
+        pos++;
+        if (pos == 1 || pos == 2) {//0,1,1,2 (como fazer gerar o 3)
+            total = 1;
+            num2 = 1;
+            num3 = 1;
+        }else if(pos >= 2) {
+            total = num2 + num3; // 1+1
+            num2 = num3;
+            num3 = total;
+        }      
+    } while (total <= num);
+};
