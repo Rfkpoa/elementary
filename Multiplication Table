@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cout << "Type in a number between 1 and 9: " << endl;
+    cin >> t;
+    if (t < 1)
+    {
+        cout << "Incorrect value - it has to be between 1 to 9" << endl;
+    }
+    else if (t > 9)
+    {
+        cout << "Incorrect value - it has to be between 1 to 9" << endl;
+    }
+    else {
+        cout << "The multiplication table from number " << t << " is:" << endl;
+        for (int i = 1; i <= 10; i++)
+        {
+            cout << t << " * " << i << " = " << (t * i)<<endl;
+        }
+    }
+    
+}
